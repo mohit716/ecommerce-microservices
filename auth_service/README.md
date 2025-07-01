@@ -14,15 +14,17 @@ This is the authentication microservice for an E-Commerce backend project. Built
 ## 📁 Project Structure
 
 
+```
 auth_service/
 ├── app/
-│ ├── main.py
-│ ├── core/
-│ │ └── config.py
-│ └── routes/
-│ └── auth_routes.py
+│   ├── main.py
+│   ├── core/
+│   │   └── config.py
+│   └── routes/
+│       └── auth_routes.py
 ├── requirements.txt
 └── README.md
+```
 
 
 ---

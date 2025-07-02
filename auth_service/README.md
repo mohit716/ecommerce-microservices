@@ -5,14 +5,16 @@ This is the authentication microservice for an E-Commerce backend project. Built
 ---
 
 ## 🔧 Tech Stack
-- Python 3.9+
-- FastAPI
-- Uvicorn (ASGI server)
+
+* Python 3.9+
+* FastAPI
+* Uvicorn (ASGI server)
+* PassLib (for secure password hashing)
+* Pydantic (with email validation)
 
 ---
 
 ## 📁 Project Structure
-
 
 ```
 auth_service/
@@ -20,12 +22,14 @@ auth_service/
 │   ├── main.py
 │   ├── core/
 │   │   └── config.py
-│   └── routes/
-│       └── auth_routes.py
+│   │   └── security.py
+│   ├── routes/
+│   │   └── auth_routes.py
+│   └── schemas/
+│       └── user_schema.py
 ├── requirements.txt
 └── README.md
 ```
-
 
 ---
 
@@ -43,45 +47,61 @@ pip install -r requirements.txt
 
 # Run server
 uvicorn app.main:app --reload
+```
 
+---
 
-📌 Test Endpoints
+## 📍 Test Endpoints
 
-Root: http://127.0.0.1:8000
+* Root: [http://127.0.0.1:8000](http://127.0.0.1:8000)
+* Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+* Health Check: [http://127.0.0.1:8000/api/auth/health](http://127.0.0.1:8000/api/auth/health)
+* Registration: [http://127.0.0.1:8000/api/auth/register](http://127.0.0.1:8000/api/auth/register)
 
-Swagger UI: http://127.0.0.1:8000/docs
+---
 
-Health Check: http://127.0.0.1:8000/api/auth/health
+## ✅ Completed Progress
 
+**Day 1:**
 
-🔮 Future Features
+* Project setup with FastAPI boilerplate
+* Project structure and folder layout
+* Initial README documentation
 
-JWT-based user registration and login
+**Day 2:**
 
-Role-based access control (admin vs. customer)
+* Implemented user registration endpoint
+* Added password hashing using PassLib
+* Defined user schema with Pydantic email validation
+* Created route handling in `auth_routes.py`
 
-Integration with product, order, and cart services
+---
 
-Admin dashboard and usage analytics
+## 🔮 Future Features
 
-📊 Machine Learning Module (Planned):
+* JWT-based login and authentication
+* Role-based access control (admin vs. customer)
+* Integration with product, order, and cart services
+* Admin dashboard and usage analytics
 
-Personalized product recommendations
+### 📊 Machine Learning Module (Planned):
 
-Customer behavior and purchase pattern analysis
+* Personalized product recommendations
+* Customer behavior and purchase pattern analysis
 
+---
 
-📦 Part of Larger Project
+## 🛂 Part of Larger Project
+
 This is one of multiple microservices in a full E-Commerce Backend system. Other services include:
 
-Product Service (FastAPI, MongoDB)
+* Product Service (FastAPI, MongoDB)
+* Cart Service
+* Order Service
+* Payment & Notification Services (optional)
 
-Cart Service
+---
 
-Order Service
+## 🧐 Author
 
-Payment & Notification Services (optional)
-
-🧠 Author
 Developed by Mohit Sharma
-

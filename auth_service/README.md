@@ -21,7 +21,7 @@ auth_service/
 ├── app/
 │   ├── main.py
 │   ├── core/
-│   │   └── config.py
+│   │   ├── config.py
 │   │   └── security.py
 │   ├── routes/
 │   │   └── auth_routes.py
@@ -53,10 +53,9 @@ uvicorn app.main:app --reload
 
 ## 📍 Test Endpoints
 
-* Root: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 * Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-* Health Check: [http://127.0.0.1:8000/api/auth/health](http://127.0.0.1:8000/api/auth/health)
-* Registration: [http://127.0.0.1:8000/api/auth/register](http://127.0.0.1:8000/api/auth/register)
+* Health Check: `GET /api/auth/health`
+* Register User: `POST /api/auth/register`
 
 ---
 
@@ -74,6 +73,12 @@ uvicorn app.main:app --reload
 * Added password hashing using PassLib
 * Defined user schema with Pydantic email validation
 * Created route handling in `auth_routes.py`
+
+**Day 3:**
+
+* Tested `/register` endpoint via Swagger UI
+* Handled duplicate email registration
+* Swagger now shows successful response testing for health and register routes
 
 ---
 
@@ -102,6 +107,6 @@ This is one of multiple microservices in a full E-Commerce Backend system. Other
 
 ---
 
-## 🧐 Author
+## 😨 Author
 
 Developed by Mohit Sharma
